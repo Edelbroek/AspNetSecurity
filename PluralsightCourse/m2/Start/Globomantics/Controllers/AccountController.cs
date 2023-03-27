@@ -59,7 +59,7 @@ namespace Globomantics.Controllers
             return LocalRedirect(returnUrl ?? "/");
         }
 
-        private UserModel GetUserFromRepositoryByExternalProvider(string? scheme, string subjectIdClaim)
+        private UserModel? GetUserFromRepositoryByExternalProvider(string? scheme, string subjectIdClaim)
             => scheme switch
             {
                 GoogleDefaults.AuthenticationScheme => userRepository.GetByGoogleId(subjectIdClaim),
