@@ -13,9 +13,12 @@ public class UserRepository : IUserRepository
             Password = "VN5/YG8lI8uo76wXP6tC+39Z1Wzv+XTI/bc0LPLP40U=",
             FavoriteColor = "green",
             Role = "admin",
-            GoogleId = "12351234123"
+            GoogleId = "110116399658352310029"
         }
     };
+
+    public UserModel? GetByGoogleId(string googleId)
+        => _users.FirstOrDefault(u => u.GoogleId == googleId);
 
     public UserModel? GetByUsernameAndPassword(string username, string password)
         => _users.FirstOrDefault(u =>
